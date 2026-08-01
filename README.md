@@ -116,16 +116,6 @@ and fp32 attention reduce.
   <img src="bench.png" alt="Inkling-Small-NVFP4 benchmark" width="720">
 </p>
 
-### Throughput (output tokens / sec)
-
-| Batch size | Total tok/s | Per‑user tok/s | Draft acceptance |
-|---|---|---|---|
-| 1 | 56.0 | 56.0 | 91.4% |
-| 2 | 110.9 | 55.5 | 91.2% |
-| 4 | 218.0 | 54.5 | 91.0% |
-| 8 | 430.7 | 53.8 | 90.8% |
-| 16 | 761.8 | 47.6 | 89.2% |
-
 ### Key observations
 
 - **Available KV cache: exactly 1,142,712 tokens** across both nodes at
