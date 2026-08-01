@@ -10,10 +10,6 @@ so the full 1 M context window plus KV cache and the DSpark draft model all fit
 comfortably at high concurrency without OOM.  The result: **~54 tok/s per user**
 at batch‑size 8 with draft acceptance rates consistently above 90%.
 
-<p align="center">
-  <img src="bench.png" alt="Inkling-Small-NVFP4 benchmark on dual DGX Spark" width="640">
-</p>
-
 ---
 
 ## Table of Contents
