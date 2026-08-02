@@ -37,7 +37,7 @@ DRAFT_MODEL="RadixArk/Inkling-Small-DSpark-Preview"
 HEAD_IP="10.0.0.1"
 WORKER_IP="10.0.0.2"
 HEAD_USER="${HEAD_USER:-$(whoami)}"
-WORKER_USER="${WORKER_USER:-zurih}"
+WORKER_USER="${WORKER_USER:-mia}"
 
 SSH_KEY_NAME="id_ed25519_shared"
 SSH_KEY="$HOME/.ssh/${SSH_KEY_NAME}"
