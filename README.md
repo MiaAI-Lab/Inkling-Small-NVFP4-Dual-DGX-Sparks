@@ -183,10 +183,10 @@ A shared Ed25519 key is used for **head‑to‑worker** automation:
 ssh-keygen -t ed25519 -f ~/.ssh/id_ed25519_shared -N ""
 
 # Copy to worker:
-ssh-copy-id -i ~/.ssh/id_ed25519_shared.pub zurih@10.0.0.2
+ssh-copy-id -i ~/.ssh/id_ed25519_shared.pub mia@10.0.0.2
 
 # Worker reverse‑SSH (for SSHFS) needs the same key:
-ssh zurih@10.0.0.2 "cat ~/.ssh/id_ed25519_shared.pub >> ~/.ssh/authorized_keys"
+ssh mia@10.0.0.2 "cat ~/.ssh/id_ed25519_shared.pub >> ~/.ssh/authorized_keys"
 ```
 
 The script expects:
@@ -195,7 +195,7 @@ The script expects:
 |---|---|
 | `SSH_KEY` | `~/.ssh/id_ed25519_shared` |
 | `WORKER_IP` | `10.0.0.2` |
-| `WORKER_USER` | `zurih` |
+| `WORKER_USER` | `mia` |
 
 ### Software
 
@@ -259,7 +259,7 @@ differs from the defaults:
 
 ```bash
 WORKER_IP="10.0.0.2"          # management IP of worker
-WORKER_USER="zurih"           # SSH user on worker
+WORKER_USER="mia"           # SSH user on worker
 HEAD_CX7_IP="10.0.22.1"       # CX7 IP on head
 WORKER_CX7_IP="10.0.22.2"     # CX7 IP on worker
 SGLANG_PORT="8888"            # HTTP API port
@@ -362,7 +362,7 @@ All of these have sensible defaults; override only when your setup differs.
 |---|---|---|
 | `NODES` | `2` | `1` = head‑only, `2` = dual DGX Spark TP=2 |
 | `WORKER_IP` | `10.0.0.2` | Worker management IP |
-| `WORKER_USER` | `zurih` | SSH user on worker |
+| `WORKER_USER` | `mia` | SSH user on worker |
 | `HEAD_CX7_IP` | `10.0.22.1` | Head ConnectX‑7 IP |
 | `WORKER_CX7_IP` | `10.0.22.2` | Worker ConnectX‑7 IP |
 | `HEAD_CX7_IF` | `enp1s0f1np1` | Head CX7 interface name |
@@ -455,7 +455,7 @@ management IP if the CX7 mount fails.
 Check the worker log:
 
 ```bash
-ssh zurih@10.0.0.2 "docker logs inkling-sglang-worker 2>&1 | tail -80"
+ssh mia@10.0.0.2 "docker logs inkling-sglang-worker 2>&1 | tail -80"
 ```
 
 Common causes:
