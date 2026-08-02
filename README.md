@@ -116,7 +116,7 @@ and fp32 attention reduce.
 - **Available KV cache: exactly 1,142,712 tokens** across both nodes at
   `MEM_FRACTION_STATIC=0.85` — enough headroom for 16 concurrent requests
   at the full 1 M context window.
-- **~54 tok/s per user** sustained at moderate batch sizes — competitive with
+- **~34 tok/s per user** sustained at moderate batch sizes — competitive with
   single‑node FP8 deployments on much larger GPUs.
 - **Draft acceptance > 90%** across the board thanks to fp32 attention reduce;
   switching to bf16 reduce drops acceptance by ~11 percentage points.
