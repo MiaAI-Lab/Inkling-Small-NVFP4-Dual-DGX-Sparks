@@ -8,15 +8,10 @@
   <a href="https://x.com/MiaAI_lab" target="_blank" rel="noopener noreferrer" style="display:inline-block;margin:0 8px;vertical-align:middle;"><img src="https://img.shields.io/badge/Follow%20me%20on%20X-000000?style=for-the-badge&logo=x&logoColor=white" alt="Follow Mia on X" height="28" style="height:28px;width:auto;vertical-align:middle;border:0;" /></a>
 </p>
 
-> **Production-grade multi-node inference for Inkling-Small-NVFP4** — serving
-> [thinkingmachines/Inkling-Small-NVFP4](https://huggingface.co/thinkingmachines/Inkling-Small-NVFP4)
-> with SGLang + DSpark speculative decoding across **two NVIDIA DGX Spark (GB10)** nodes,
-> interconnected over **ConnectX‑7 RoCEv2**.
-
-The FP4-quantised weights fit on a single GB10, but we stretch to tensor‑parallel=2
-so the full 1 M context window plus KV cache and the DSpark draft model all fit
-comfortably at high concurrency without OOM.  The result: **~54 tok/s per user**
-at batch‑size 8 with draft acceptance rates consistently above 90%.
+Production-grade multi-node inference for Inkling-Small-NVFP4** — serving
+[thinkingmachines/Inkling-Small-NVFP4](https://huggingface.co/thinkingmachines/Inkling-Small-NVFP4)
+with SGLang + DSpark speculative decoding across **two NVIDIA DGX Spark (GB10)** nodes,
+interconnected over **ConnectX‑7 RoCEv2**.
 
 ---
 
