@@ -54,14 +54,14 @@ interconnected over **ConnectX‑7 RoCEv2**.
                                  │
     ┌────────────────────────────▼─────────────────────────────────────┐
     │                    DGX Spark #1  (“head”)                        │
-    │    10.0.0.1 (mgmt)  /  10.0.22.1 (CX7)                          │
+    │    10.0.0.1 (mgmt)  /  10.0.22.1 (CX7)                           │
     │                                                                  │
     │  ┌───────────────────────────────────────────────────────────┐   │
     │  │  Docker: inkling-sglang-head                              │   │
     │  │    • rank 0 (TP=2)                                        │   │
-    │  │    • inkling-small (FP4 weights + DSpark draft)            │   │
-    │  │    • NCCL over RoCEv2 → worker                             │   │
-    │  │    • local HF cache (SSD)                                  │   │
+    │  │    • inkling-small (FP4 weights + DSpark draft)           │   │
+    │  │    • NCCL over RoCEv2 → worker                            │   │
+    │  │    • local HF cache (SSD)                                 │   │
     │  └───────────────────────────────────────────────────────────┘   │
     │                                                                  │
     │  local HF cache: ~/.cache/huggingface                            │
@@ -73,18 +73,18 @@ interconnected over **ConnectX‑7 RoCEv2**.
                           or management IP (fallback)
                                      │
     ┌────────────────────────────────▼─────────────────────────────────┐
-    │                    DGX Spark #2  (“worker”)                       │
-    │    10.0.0.2 (mgmt)  /  10.0.22.2 (CX7)                          │
+    │                    DGX Spark #2  (“worker”)                      │
+    │    10.0.0.2 (mgmt)  /  10.0.22.2 (CX7)                           │
     │                                                                  │
     │  ┌───────────────────────────────────────────────────────────┐   │
     │  │  Docker: inkling-sglang-worker                            │   │
     │  │    • rank 1 (TP=2)                                        │   │
-    │  │    • reads weights from head via SSHFS mount               │   │
-    │  │    • NCCL over RoCEv2 → head                               │   │
+    │  │    • reads weights from head via SSHFS mount              │   │
+    │  │    • NCCL over RoCEv2 → head                              │   │
     │  └───────────────────────────────────────────────────────────┘   │
     │                                                                  │
     │  /mnt/head-hf-cache ──sshfs──► head:~/.cache/huggingface         │
-    └───────────────────────────────────────────────────────────────────┘
+    └──────────────────────────────────────────────────────────────────┘
 ```
 
 **Key design decisions:**
